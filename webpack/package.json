@@ -1,0 +1,17 @@
+{
+  "name": "webpack-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "yarn && yarn build-example-package && yarn cache clean example-package && rimraf node_modules && yarn && webpack",
+    "build-example-package": "cd ../monorepo && bazelisk build :example-package"
+  },
+  "devDependencies": {
+    "@bazel/bazelisk": "^1.11.0",
+    "example-package": "file:../monorepo/bazel-bin/example-package",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

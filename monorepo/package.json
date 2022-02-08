@@ -1,0 +1,11 @@
+{
+  "name": "example-package",
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "index.mjs",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@bazel/concatjs": "^5.1.0",
+    "typescript": "^4.5.5"
+  }
+}

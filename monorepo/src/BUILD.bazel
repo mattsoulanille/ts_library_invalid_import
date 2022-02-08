@@ -1,0 +1,12 @@
+load("@npm//@bazel/concatjs:index.bzl", "ts_library")
+
+package(default_visibility = ["//visibility:public"])
+
+ts_library(
+    name = "src_lib",
+    package_name = "example-package/src",
+    module_name = "example-package/src",
+    srcs = [
+        "foo.ts",
+    ],
+)

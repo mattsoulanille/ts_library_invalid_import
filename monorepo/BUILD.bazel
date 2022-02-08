@@ -1,0 +1,29 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "pkg_npm")
+load("@npm//@bazel/concatjs:index.bzl", "ts_library")
+
+package(default_visibility = ["//:__subpackages__"])
+
+exports_files(["tsconfig.json"])
+
+ts_library(
+    name = "example-package_lib",
+    package_name = "example-package",
+    srcs = [
+        "index.ts",
+    ],
+    module_name = "example-package",
+    deps = [
+        "//src:src_lib",
+    ],
+)
+
+pkg_npm(
+    name = "example-package",
+    package_name = "example-package",
+    srcs = [
+        "package.json",
+    ],
+    deps = [
+        ":example-package_lib",
+    ],
+)
